@@ -56,9 +56,9 @@ class AirpodController:
             if listOperators != None:
                 for i in listOperators:
                     if i.getName() == name:
-                        airpord.getFlightOperators().remove(i)
+                        listOperators.remove(i)
                 
-                if len(listOperators) != len(airpord.getFlightOperators()):
+                if len(airpord.getFlightOperators()) != len(listOperators):
                     airpord.setFlightOperators(listOperators)
                     return True
                 else:
@@ -68,13 +68,10 @@ class AirpodController:
                 return False
         else:
             return False
-    
 
     def listAirpordsWithOperators(self):
         listAirpordWithOperators = []
         for x in self.__listAirpords.values():
-            if x.getFlightOperators() != None or len(x.getFlightOperators()) != 0:
+            if x.getFlightOperators() != None and len(x.getFlightOperators()) > 0:
                 listAirpordWithOperators.append(x)
         return listAirpordWithOperators
-
-
