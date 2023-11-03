@@ -8,7 +8,7 @@ class Airpord:
         self.__country = country
         self.__website = website
         self.__phone = phone
-        self.__flightOperators = [] 
+        self.__flightOperators = []  
 
     #Get y sets
 
@@ -48,5 +48,5 @@ class Airpord:
         self.__flightOperators = value
 
     def addFlightOperator(self, name, planes):
-        operator = fo.FlightOperators(name, planes)
-        self.__flightOperators.append(operator)
+        operators = fo.FlightOperators(name, planes)
+        self.__flightOperators.append(operators)
