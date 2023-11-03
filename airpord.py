@@ -1,3 +1,4 @@
+import flightOperators as fo
 class Airpord:
     def __init__(self, iata, name, location, city, country, website, phone, flightOperators):
         self.__iata = iata
@@ -7,7 +8,7 @@ class Airpord:
         self.__country = country
         self.__website = website
         self.__phone = phone
-        self.__flightOperators = flightOperators   
+        self.__flightOperators = [] 
 
     #Get y sets
 
@@ -45,3 +46,7 @@ class Airpord:
         self.__phone = value
     def setFlightOperators(self, value):
         self.__flightOperators = value
+
+    def addFlightOperator(self, name, planes):
+        operator = fo.FlightOperators(name, planes)
+        self.__flightOperators.append(operator)
